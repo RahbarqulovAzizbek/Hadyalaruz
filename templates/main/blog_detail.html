@@ -91,6 +91,25 @@
                                     </a>
                                 {% endfor %}
                             </div>
+
+                       {#      back next blog post section                  #}
+
+                            <div class="flex-c-m stext-101 cl0 size-125 bg3 bor2 hov-btn3 p-lr-15 trans-04 mt-4 mr-2">
+                                {% if post.get_previous_by_created_at %}
+                                    <a href="{% url 'blogs:blog_detail' pk=post.get_previous_by_created_at.id %}">
+                                        <p style="color: white"><span class="arrow_left"></span> {% trans 'Back' %}</p>
+                                    </a>
+                                {% endif %}
+                            </div>
+                            <div class="flex-c-m stext-101 cl0 size-125 bg3 bor2 hov-btn3 p-lr-15 trans-04 mt-4">
+                                {% if post.get_next_by_created_at %}
+                                    <a href="{% url 'blogs:blog_detail' pk=post.get_next_by_created_at.id %}">
+                                        <p style="color: white">{% trans 'Next' %} <span class="arrow_right"></span></p>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        {#      back next blog post section  end            #}
+
                         </div>
 
                         <!--  -->
