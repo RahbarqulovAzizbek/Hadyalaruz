@@ -5,6 +5,7 @@ from django.contrib import admin
 from .models import *
 
 
+
 @admin.register(BlogPostModel)
 class BlogPostAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'created_at']

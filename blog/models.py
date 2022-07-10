@@ -28,6 +28,7 @@ class BlogTagModel(models.Model):
         verbose_name = 'tag'
         verbose_name_plural = 'tags'
 
+
 class BlogPostModel(models.Model):
     title = models.CharField(max_length=255, verbose_name=_('title'))
     description = models.TextField(verbose_name=_('description'))
