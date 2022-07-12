@@ -100,6 +100,24 @@
                                 {% endfor %}
                             </div>
 
+                            <div class="mt-4 size-217">
+                                {% for comment in post.comments.all %}
+                                    <div class="row">
+                                        <div class="col-12 mb-3">
+                                            <strong class="mr-5">{{ comment.name }}</strong>
+                                            {{ comment.created_at|timesince }}
+                                        </div>
+
+                                        <div class="col-12 mb-3">
+                                            <p>
+                                                {{ comment.comment }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+
                             {#      back next blog post section                  #}
 
                             <div class="flex-c-m stext-101 cl0 size-125 bg3 bor2 hov-btn3 p-lr-15 trans-04 mt-4 mr-2">
@@ -130,25 +148,26 @@
                                 Your email address will not be published. Required fields are marked *
                             </p>
 
-                            <form>
+                            <form action="{% url 'blogs:blog_comment' pk=post.id %}" method="POST">
+                                {% csrf_token %}
                                 <div class="bor19 m-b-20">
-                                    <textarea class="stext-111 cl2 plh3 size-124 p-lr-18 p-tb-15" name="cmt"
+                                    <textarea class="stext-111 cl2 plh3 size-124 p-lr-18 p-tb-15" name="comment"
                                               placeholder="Comment..."></textarea>
                                 </div>
 
                                 <div class="bor19 size-218 m-b-20">
                                     <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="name"
-                                           placeholder="Name *">
+                                           placeholder="Name">
                                 </div>
 
                                 <div class="bor19 size-218 m-b-20">
                                     <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="email"
-                                           placeholder="Email *">
+                                           placeholder="Email">
                                 </div>
 
                                 <div class="bor19 size-218 m-b-30">
-                                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="web"
-                                           placeholder="Website">
+                                    <input class="stext-111 cl2 plh3 size-116 p-lr-18" type="text" name="phone"
+                                           placeholder="Phone">
                                 </div>
 
                                 <button class="flex-c-m stext-101 cl0 size-125 bg3 bor2 hov-btn3 p-lr-15 trans-04">
