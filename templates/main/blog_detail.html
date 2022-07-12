@@ -4,6 +4,14 @@
 
 {% block content %}
 
+    <!-- Title page -->
+    <section class="bg-img1 txt-center p-lr-15 p-tb-92"
+             style="background-image: url('{% static 'images/bg-02.jpg' %}')">
+        <h2 class="ltext-105 cl0 txt-center">
+            Blog
+        </h2>
+    </section>
+
     <!-- breadcrumb -->
     <div class="container">
         <div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
@@ -92,7 +100,7 @@
                                 {% endfor %}
                             </div>
 
-                       {#      back next blog post section                  #}
+                            {#      back next blog post section                  #}
 
                             <div class="flex-c-m stext-101 cl0 size-125 bg3 bor2 hov-btn3 p-lr-15 trans-04 mt-4 mr-2">
                                 {% if post.get_previous_by_created_at %}
@@ -108,7 +116,7 @@
                                     </a>
                                 {% endif %}
                             </div>
-                        {#      back next blog post section  end            #}
+                            {#      back next blog post section  end            #}
 
                         </div>
 

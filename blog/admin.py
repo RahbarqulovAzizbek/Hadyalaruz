@@ -28,8 +28,8 @@ class AuthorAdmin(admin.ModelAdmin):
     search_fields = ['first_name', 'last_name']
 
 
-# @admin.register(CommentModel)
-# class CommentModelAdmin(admin.ModelAdmin):
-#     list_display = ['id', 'post', 'name', 'comment']
-#     list_display_links = ['id', 'post', 'name', 'comment']
-#     search_fields = ['post', 'name']
+@admin.register(CommentModel)
+class CommentModelAdmin(admin.ModelAdmin):
+    list_display = ['id', 'post', 'name', 'comment']
+    list_display_links = ['id', 'post', 'name', 'comment']
+    search_fields = ['post', 'name']

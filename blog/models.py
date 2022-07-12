@@ -53,3 +53,24 @@ class BlogPostModel(models.Model):
     class Meta:
         verbose_name = 'blog'
         verbose_name_plural = 'blogs'
+
+
+class CommentModel(models.Model):
+    post = models.ForeignKey(
+        BlogPostModel,
+        on_delete=models.CASCADE,
+        related_name='comments',
+        verbose_name=_('post')
+    )
+    name = models.CharField(max_length=64, verbose_name=_('name'))
+    email = models.EmailField(verbose_name=_('email'))
+    phone = models.CharField(max_length=25, verbose_name=_('phone'))
+    comment = models.TextField(verbose_name=_('comment'))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created at'))
+
+    class Meta:
+        verbose_name = 'comment'
+        verbose_name_plural = 'comments'
+
+    def __str__(self):
+        return self.name
