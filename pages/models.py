@@ -3,7 +3,6 @@ from django.utils.translation import gettext_lazy as _
 
 
 class ContactModel(models.Model):
-    name = models.CharField(max_length=64, verbose_name=_('name'))
     email = models.EmailField(verbose_name=_('email'))
     message = models.TextField(verbose_name=_('message'))
     created_at = models.DateTimeField(
@@ -12,7 +11,7 @@ class ContactModel(models.Model):
     )
 
     def __str__(self):
-        return self.name
+        return self.email
 
     class Meta:
         verbose_name = 'contact'

@@ -5,5 +5,5 @@ from .models import ContactModel
 
 @admin.register(ContactModel)
 class ContactModelAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name']
-    list_display_links = ['id', 'name']
+    list_display = ['id', 'email']
+    list_display_links = ['id', 'email']
