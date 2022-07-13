@@ -3,9 +3,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class ContactModel(models.Model):
-    name = models.CharField(max_length=64, verbose_name=_('name'))
     email = models.EmailField(verbose_name=_('email'))
-    phone = models.CharField(max_length=25, verbose_name=_('phone'))
     message = models.TextField(verbose_name=_('message'))
     created_at = models.DateTimeField(
         auto_now_add=True,
