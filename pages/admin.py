@@ -1,6 +1,12 @@
 from django.contrib import admin
+from .models import ContactModel, BannerModel
 
-from .models import ContactModel
+
+@admin.register(BannerModel)
+class BannerModelAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title', 'collection', 'is_active']
+    list_display_links = ['id', 'title']
+    search_fields = ['title', 'collection']
 
 
 @admin.register(ContactModel)

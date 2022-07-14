@@ -8,6 +8,7 @@ class BlogListView(ListView):
     model = BlogPostModel
     template_name = 'main/blog_list.html'
     context_object_name = 'posts'
+    paginate_by = 2
 
     def get_queryset(self):
         qs = BlogPostModel.objects.order_by('-pk')
