@@ -1,16 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from shop.models import CategoryModel, TagModel, ProductModel
-
-
-@admin.register(TagModel)
-class CategoryModelAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name']
-    list_display_links = ['id', 'name']
-    search_fields = ['name']
-    list_filter = ['created_at']
-
+from shop.models import CategoryModel, ProductModel
 
 @admin.register(CategoryModel)
 class CategoryModelAdmin(admin.ModelAdmin):
